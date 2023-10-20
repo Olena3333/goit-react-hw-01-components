@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './Profile.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const Profile = ({ user }) => {
   const { username, tag, location, avatar, stats } = user;
@@ -29,10 +29,12 @@ export const Profile = ({ user }) => {
     </div>
   );
 };
-// Profile.PropTypes = {
-//   username: PropTypes.string.isRequired,
-//   tag: PropTypes.string.isRequired,
-//   location: PropTypes.string.isRequired,
-//   avatar: PropTypes.img.isRequired,
-//   stats: PropTypes.array.isRequired,
-// };
+Profile.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.object.isRequired,
+  }).isRequired,
+};
