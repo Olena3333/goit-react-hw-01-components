@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   StyledTable,
   StyledSection,
   StyledThead,
   StyledTh,
-  // StyledTr,
   StyledTd,
 } from './TransactionHistory.styled';
 export const TransactionHistory = ({ items }) => {
@@ -20,7 +20,7 @@ export const TransactionHistory = ({ items }) => {
         </StyledThead>
 
         <tbody>
-          {items.map(({ id, type, amount, currency, bgColor }) => (
+          {items.map(({ id, type, amount, currency }) => (
             <tr key={id}>
               <StyledTd>{type}</StyledTd>
               <StyledTd>{amount}</StyledTd>
@@ -31,4 +31,14 @@ export const TransactionHistory = ({ items }) => {
       </StyledTable>
     </StyledSection>
   );
+};
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

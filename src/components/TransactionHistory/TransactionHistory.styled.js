@@ -21,13 +21,6 @@ export const StyledTh = styled.th`
   padding: 15px;
   padding: 15px;
 `;
-// export const StyledTr = styled.tr`
-//   background-color: ${props => (props.$bgColor ? 'white' : 'gray')};
-// `;
-
-// tr:nth-child(even) {
-//   background-color: gray;
-// }
 
 export const StyledTd = styled.td`
   border: 1px solid black;
